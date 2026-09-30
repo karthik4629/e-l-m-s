@@ -1,0 +1,3081 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   GLOBAL / RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    min-height: 100%;
+    width: 100%;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #16002f;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: 'Poppins', sans-serif;
+}
+
+button {
+    outline: none;
+}
+
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid rgba(255, 102, 139, 0.75);
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   MAIN MANAGER LAYOUT
+========================================================= */
+
+.manager-layout {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(126, 35, 190, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 90%,
+            rgba(255, 79, 123, 0.07),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #16002f,
+            #210044
+        );
+
+    color: #ffffff;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.manager-layout .sidebar {
+    width: 240px;
+    min-width: 240px;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 18px;
+
+    background:
+        rgba(31, 5, 61, 0.95);
+
+    border-right:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    align-self: flex-start;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.manager-layout .brand {
+    padding: 0 12px;
+    margin-bottom: 45px;
+
+    min-width: 0;
+}
+
+.manager-layout .brand h1 {
+    color: #ffffff;
+
+    font-size: 23px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    word-break: break-word;
+}
+
+.manager-layout .brand span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #ff668b;
+
+    font-size: 10px;
+    line-height: 1.4;
+
+    letter-spacing: 0.5px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.manager-layout .sidebar-nav {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-width: 0;
+
+    overflow-x: hidden;
+}
+
+.manager-layout .nav-item {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    padding: 12px 14px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #bca8c9;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.manager-layout .nav-item:hover {
+    background:
+        rgba(255, 79, 123, 0.08);
+
+    color: #ffffff;
+
+    transform: translateX(2px);
+}
+
+.manager-layout .nav-item.active {
+    background: #ff4f7b;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   NAVIGATION ICON
+========================================================= */
+
+.manager-layout .nav-icon {
+    width: 22px;
+    min-width: 22px;
+
+    margin-right: 8px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   NAVIGATION BADGE
+========================================================= */
+
+.manager-layout .nav-badge {
+    min-width: 20px;
+    height: 20px;
+
+    padding: 0 6px;
+    margin-left: auto;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #ff4f7b;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.manager-layout .logout-btn {
+    width: 100%;
+
+    margin-top: auto;
+    padding: 11px;
+
+    border:
+        1px solid rgba(255, 79, 123, 0.4);
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #ff668b;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.manager-layout .logout-btn:hover {
+    background: #ff4f7b;
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.manager-layout .main-content {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+
+    padding: 30px 38px;
+
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.manager-layout .topbar {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    min-width: 0;
+}
+
+.manager-layout .topbar > div:first-child {
+    min-width: 0;
+}
+
+.manager-layout .topbar h2 {
+    color: #ffffff;
+
+    font-size: 23px;
+    line-height: 1.3;
+
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.manager-layout .topbar p {
+    margin-top: 4px;
+
+    color: #a994b7;
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   USER INFORMATION
+========================================================= */
+
+.manager-layout .user-info {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    min-width: 0;
+}
+
+.manager-layout .user-avatar {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #ff4f7b;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.manager-layout .user-info span {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    max-width: 180px;
+}
+
+.manager-layout .user-info small {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #a994b7;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SECTION SYSTEM
+========================================================= */
+
+.manager-layout .content-section {
+    display: none;
+
+    width: 100%;
+
+    min-width: 0;
+}
+
+.manager-layout .content-section.active-section {
+    display: block;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.manager-layout .section-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #ff668b;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   WELCOME CARD
+========================================================= */
+
+.manager-layout .welcome-card {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(111, 28, 174, 0.75),
+            rgba(66, 12, 132, 0.75)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 8px;
+
+    min-width: 0;
+}
+
+.manager-layout .welcome-card > div:first-child {
+    min-width: 0;
+}
+
+.manager-layout .welcome-card h3 {
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.manager-layout .welcome-card p {
+    margin-top: 5px;
+
+    color: #c3b3cb;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.manager-layout .primary-btn {
+    flex-shrink: 0;
+
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #ff4f7b;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.manager-layout .primary-btn:hover {
+    background: #ff668b;
+
+    transform: translateY(-1px);
+}
+
+.manager-layout .primary-btn:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   SUMMARY GRID
+========================================================= */
+
+.manager-layout .summary-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.manager-layout .summary-card {
+    min-width: 0;
+
+    padding: 20px;
+
+    background:
+        rgba(44, 9, 76, 0.85);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.manager-layout .summary-card:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(255, 79, 123, 0.25);
+}
+
+.manager-layout .summary-card-top {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    min-width: 0;
+}
+
+.manager-layout .summary-icon {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 6px;
+
+    background:
+        rgba(255, 79, 123, 0.10);
+
+    color: #ff668b;
+
+    font-size: 12px;
+}
+
+.manager-layout .summary-title {
+    display: block;
+
+    color: #a994b7;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.manager-layout .summary-card strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.manager-layout .summary-card p {
+    margin-top: 5px;
+
+    color: #8e799c;
+
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+
+/* Summary variants */
+
+.manager-layout .pending-card {
+    border-top:
+        2px solid rgba(255, 209, 102, 0.5);
+}
+
+.manager-layout .approved-card {
+    border-top:
+        2px solid rgba(72, 187, 120, 0.5);
+}
+
+.manager-layout .rejected-card {
+    border-top:
+        2px solid rgba(255, 79, 123, 0.5);
+}
+
+
+/* =========================================================
+   SECONDARY DASHBOARD STATS
+========================================================= */
+
+.manager-layout .dashboard-secondary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.manager-layout .dashboard-stat-card {
+    min-width: 0;
+
+    padding: 17px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    background:
+        rgba(35, 7, 62, 0.75);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 8px;
+}
+
+.manager-layout .dashboard-stat-card > * {
+    min-width: 0;
+}
+
+.manager-layout .dashboard-stat-card span {
+    color: #9683a1;
+
+    font-size: 10px;
+
+    word-break: break-word;
+}
+
+.manager-layout .dashboard-stat-card strong {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   SECTION CARD
+========================================================= */
+
+.manager-layout .section-card {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 24px;
+    margin-bottom: 20px;
+
+    background:
+        rgba(35, 7, 62, 0.85);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 8px;
+}
+
+.manager-layout .section-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+
+    min-width: 0;
+}
+
+.manager-layout .section-header > div:first-child {
+    min-width: 0;
+}
+
+.manager-layout .section-header h3 {
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.manager-layout .section-header p {
+    margin-top: 4px;
+
+    color: #9683a1;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+.manager-layout .text-btn {
+    flex-shrink: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ff668b;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+.manager-layout .text-btn:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   REQUEST FILTERS
+========================================================= */
+
+.manager-layout .request-filters {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+.manager-layout .filter-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 12px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 5px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color: #a994b7;
+
+    font-size: 9px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.manager-layout .filter-btn:hover {
+    color: #ffffff;
+
+    border-color:
+        rgba(255, 79, 123, 0.30);
+}
+
+.manager-layout .filter-btn.active {
+    background: #ff4f7b;
+
+    border-color: #ff4f7b;
+
+    color: #ffffff;
+}
+
+.manager-layout .filter-btn span {
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 4px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    font-size: 8px;
+}
+
+.manager-layout .filter-btn.active span {
+    background:
+        rgba(255, 255, 255, 0.20);
+}
+
+
+/* =========================================================
+   REQUEST LIST
+========================================================= */
+
+.manager-layout .request-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   REQUEST CARD
+========================================================= */
+
+.manager-layout .request-card {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 18px;
+
+    background:
+        rgba(48, 11, 78, 0.70);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 6px;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.manager-layout .request-card:hover {
+    border-color:
+        rgba(255, 79, 123, 0.18);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   REQUEST TOP
+========================================================= */
+
+.manager-layout .request-top {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    min-width: 0;
+}
+
+.manager-layout .request-top > * {
+    min-width: 0;
+}
+
+.manager-layout .request-top h4 {
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.manager-layout .request-top > span {
+    color: #9683a1;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   EMPLOYEE SUMMARY
+========================================================= */
+
+.manager-layout .employee-summary {
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.manager-layout .employee-summary > div:last-child {
+    min-width: 0;
+}
+
+.manager-layout .employee-avatar {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 79, 123, 0.13);
+
+    color: #ff668b;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   REQUEST INFORMATION
+========================================================= */
+
+.manager-layout .request-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+
+    min-width: 0;
+}
+
+.manager-layout .info-item {
+    min-width: 0;
+}
+
+.manager-layout .info-item span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #8e799c;
+
+    font-size: 9px;
+}
+
+.manager-layout .info-item strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   REQUEST REASON
+========================================================= */
+
+.manager-layout .request-reason {
+    padding: 12px;
+    margin-bottom: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    border-radius: 5px;
+
+    min-width: 0;
+}
+
+.manager-layout .request-reason span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8e799c;
+
+    font-size: 9px;
+}
+
+.manager-layout .request-reason p {
+    color: #d0c4d5;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   REQUEST REVIEW
+========================================================= */
+
+.manager-layout .request-review {
+    margin-top: 12px;
+
+    padding: 12px;
+
+    background:
+        rgba(255, 79, 123, 0.04);
+
+    border-left:
+        2px solid rgba(255, 79, 123, 0.50);
+
+    border-radius: 5px;
+
+    min-width: 0;
+}
+
+.manager-layout .request-review span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #ff668b;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.manager-layout .request-review p {
+    color: #d0c4d5;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   REVIEWED INFORMATION
+========================================================= */
+
+.manager-layout .reviewed-info {
+    margin-top: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    min-width: 0;
+
+    font-size: 9px;
+}
+
+.manager-layout .reviewed-info span {
+    color: #8e799c;
+
+    font-weight: 500;
+}
+
+.manager-layout .reviewed-info strong {
+    color: #bca8c9;
+
+    font-weight: 500;
+
+    text-align: right;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   REQUEST ACTIONS
+========================================================= */
+
+.manager-layout .request-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.manager-layout .approve-btn,
+.manager-layout .reject-btn,
+.manager-layout .details-btn {
+    min-height: 34px;
+
+    padding: 8px 14px;
+
+    border-radius: 4px;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.manager-layout .approve-btn:hover,
+.manager-layout .reject-btn:hover,
+.manager-layout .details-btn:hover {
+    transform: translateY(-1px);
+}
+
+.manager-layout .approve-btn:disabled,
+.manager-layout .reject-btn:disabled,
+.manager-layout .details-btn:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* Approve */
+
+.manager-layout .approve-btn {
+    border:
+        1px solid rgba(72, 187, 120, 0.45);
+
+    background:
+        rgba(72, 187, 120, 0.08);
+
+    color: #7CFFB2;
+}
+
+.manager-layout .approve-btn:hover {
+    background: #48bb78;
+
+    color: #ffffff;
+}
+
+
+/* Reject */
+
+.manager-layout .reject-btn {
+    border:
+        1px solid rgba(255, 79, 123, 0.45);
+
+    background:
+        rgba(255, 79, 123, 0.08);
+
+    color: #ff8ca5;
+}
+
+.manager-layout .reject-btn:hover {
+    background: #ff4f7b;
+
+    color: #ffffff;
+}
+
+
+/* Details */
+
+.manager-layout .details-btn {
+    border:
+        1px solid rgba(150, 131, 161, 0.35);
+
+    background:
+        rgba(150, 131, 161, 0.08);
+
+    color: #c7b9cd;
+}
+
+.manager-layout .details-btn:hover {
+    background:
+        rgba(150, 131, 161, 0.20);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.manager-layout .status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.manager-layout .status.pending {
+    background:
+        rgba(255, 193, 7, 0.12);
+
+    color: #ffd166;
+}
+
+.manager-layout .status.approved {
+    background:
+        rgba(72, 187, 120, 0.12);
+
+    color: #7CFFB2;
+}
+
+.manager-layout .status.rejected {
+    background:
+        rgba(255, 79, 123, 0.12);
+
+    color: #ff8ca5;
+}
+
+.manager-layout .status.cancelled {
+    background:
+        rgba(150, 131, 161, 0.12);
+
+    color: #bca8c9;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.manager-layout .empty-state {
+    width: 100%;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    border:
+        1px dashed rgba(255, 255, 255, 0.12);
+
+    border-radius: 6px;
+}
+
+.manager-layout .empty-icon {
+    width: 42px;
+    height: 42px;
+
+    margin: 0 auto 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 79, 123, 0.08);
+
+    color: #ff668b;
+
+    font-size: 15px;
+}
+
+.manager-layout .empty-state h4 {
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.manager-layout .empty-state p {
+    margin-top: 5px;
+
+    color: #8e799c;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.manager-layout .manager-error {
+    width: 100%;
+
+    margin: 0 0 20px;
+
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background:
+        rgba(255, 79, 123, 0.08);
+
+    border:
+        1px solid rgba(255, 79, 123, 0.25);
+
+    border-radius: 7px;
+
+    color: #ff9bb0;
+
+    font-size: 10px;
+
+    min-width: 0;
+}
+
+.manager-layout .manager-error span {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 79, 123, 0.15);
+
+    color: #ff668b;
+
+    font-weight: 700;
+}
+
+.manager-layout .manager-error p {
+    flex: 1;
+    min-width: 0;
+
+    line-height: 1.4;
+
+    word-break: break-word;
+}
+
+.manager-layout .manager-error button,
+.manager-layout .manager-success button {
+    flex-shrink: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.manager-layout .manager-success {
+    width: 100%;
+
+    margin: 0 0 20px;
+
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    background:
+        rgba(72, 187, 120, 0.08);
+
+    border:
+        1px solid rgba(72, 187, 120, 0.25);
+
+    border-radius: 7px;
+
+    color: #8cffbd;
+
+    font-size: 10px;
+
+    min-width: 0;
+}
+
+.manager-layout .manager-success span {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(72, 187, 120, 0.15);
+
+    color: #7CFFB2;
+
+    font-weight: 700;
+}
+
+.manager-layout .manager-success p {
+    flex: 1;
+    min-width: 0;
+
+    line-height: 1.4;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.manager-loading {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16002f,
+            #210044
+        );
+
+    color: #ffffff;
+}
+
+.manager-loading h2 {
+    margin-top: 15px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.manager-loading p {
+    margin-top: 6px;
+
+    color: #9683a1;
+
+    font-size: 10px;
+}
+
+.manager-layout .loading-spinner {
+    width: 42px;
+    height: 42px;
+
+    border:
+        3px solid rgba(255, 255, 255, 0.10);
+
+    border-top-color: #ff4f7b;
+
+    border-radius: 50%;
+
+    animation:
+        manager-spin 0.8s linear infinite;
+}
+
+@keyframes manager-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.manager-layout .profile-header {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 20px;
+    margin-bottom: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 8px;
+
+    min-width: 0;
+}
+
+.manager-layout .profile-header > div:last-child {
+    min-width: 0;
+}
+
+.manager-layout .profile-avatar {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f7b,
+            #8c3db7
+        );
+
+    color: #ffffff;
+
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.manager-layout .profile-header h3 {
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.manager-layout .profile-header p {
+    margin-top: 4px;
+
+    color: #9683a1;
+
+    font-size: 10px;
+
+    word-break: break-word;
+}
+
+.manager-layout .profile-role {
+    display: inline-block;
+
+    margin-top: 7px;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 79, 123, 0.10);
+
+    color: #ff668b;
+
+    font-size: 8px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   PROFILE DETAILS
+========================================================= */
+
+.manager-layout .profile-details {
+    width: 100%;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 6px;
+
+    overflow: hidden;
+}
+
+.manager-layout .profile-row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 16px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    min-width: 0;
+}
+
+.manager-layout .profile-row:last-child {
+    border-bottom: none;
+}
+
+.manager-layout .profile-row span {
+    color: #9683a1;
+
+    font-size: 11px;
+
+    flex-shrink: 0;
+}
+
+.manager-layout .profile-row strong {
+    min-width: 0;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    text-align: right;
+
+    word-break: break-word;
+}
+
+.manager-layout .active-value {
+    color: #7CFFB2 !important;
+}
+
+.manager-layout .inactive-value {
+    color: #ff8ca5 !important;
+}
+
+
+/* =========================================================
+   PROFILE SUMMARY
+========================================================= */
+
+.manager-layout .profile-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+.manager-layout .profile-summary-grid > div {
+    min-width: 0;
+
+    padding: 17px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 7px;
+
+    text-align: center;
+}
+
+.manager-layout .profile-summary-grid span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #9683a1;
+
+    font-size: 9px;
+
+    word-break: break-word;
+}
+
+.manager-layout .profile-summary-grid strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   LEAVE DETAILS MODAL OVERLAY
+========================================================= */
+
+.manager-layout .details-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1100;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(5, 0, 15, 0.72);
+
+    backdrop-filter: blur(5px);
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+}
+
+
+/* =========================================================
+   LEAVE DETAILS MODAL
+========================================================= */
+
+.manager-layout .details-modal {
+    width: 100%;
+    max-width: 650px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2a0848,
+            #210039
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0, 0, 0, 0.45);
+
+    overscroll-behavior: contain;
+}
+
+
+/* =========================================================
+   DETAILS MODAL HEADER
+========================================================= */
+
+.manager-layout .details-modal-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+    min-width: 0;
+}
+
+.manager-layout .details-modal-header > div:first-child {
+    min-width: 0;
+}
+
+.manager-layout .details-modal-header h3 {
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   CLOSE MODAL BUTTON
+========================================================= */
+
+.manager-layout .close-modal-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color: #bca8c9;
+
+    font-size: 21px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.manager-layout .close-modal-btn:hover {
+    background:
+        rgba(255, 79, 123, 0.15);
+
+    color: #ffffff;
+
+    border-color:
+        rgba(255, 79, 123, 0.35);
+}
+
+.manager-layout .close-modal-btn:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   DETAILS EMPLOYEE
+========================================================= */
+
+.manager-layout .details-employee {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+    margin-bottom: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border-radius: 8px;
+
+    min-width: 0;
+}
+
+.manager-layout .details-avatar {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #ff4f7b;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.manager-layout .details-employee > div:nth-child(2) {
+    flex: 1;
+    min-width: 0;
+}
+
+.manager-layout .details-employee h4 {
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.manager-layout .details-employee p {
+    margin-top: 3px;
+
+    color: #9683a1;
+
+    font-size: 9px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   DETAILS GRID
+========================================================= */
+
+.manager-layout .details-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+.manager-layout .details-item {
+    min-width: 0;
+
+    padding: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 7px;
+}
+
+.manager-layout .details-item span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8e799c;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+.manager-layout .details-item strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   DETAILS TEXT BLOCK
+========================================================= */
+
+.manager-layout .details-text-block {
+    padding: 14px;
+    margin-bottom: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border-radius: 7px;
+
+    min-width: 0;
+}
+
+.manager-layout .details-text-block span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #8e799c;
+
+    font-size: 9px;
+    font-weight: 500;
+}
+
+.manager-layout .details-text-block p {
+    color: #d0c4d5;
+
+    font-size: 10px;
+    line-height: 1.6;
+
+    word-break: break-word;
+}
+
+.manager-layout .review-block {
+    border-left:
+        2px solid rgba(255, 79, 123, 0.45);
+}
+
+
+/* =========================================================
+   REVIEWED BY
+========================================================= */
+
+.manager-layout .reviewed-by-block {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px 14px;
+    margin-bottom: 15px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 7px;
+
+    min-width: 0;
+}
+
+.manager-layout .reviewed-by-block span {
+    color: #8e799c;
+
+    font-size: 9px;
+
+    flex-shrink: 0;
+}
+
+.manager-layout .reviewed-by-block strong {
+    min-width: 0;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    text-align: right;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   DETAILS ACTIONS
+========================================================= */
+
+.manager-layout .details-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 8px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   REJECT MODAL OVERLAY
+========================================================= */
+
+.manager-layout .reject-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1200;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, 0.65);
+
+    backdrop-filter: blur(4px);
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+}
+
+
+/* =========================================================
+   REJECT MODAL
+========================================================= */
+
+.manager-layout .reject-modal {
+    width: 100%;
+    max-width: 520px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2a0848,
+            #210039
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 25px 80px
+        rgba(0, 0, 0, 0.50);
+
+    overscroll-behavior: contain;
+}
+
+
+/* =========================================================
+   REJECT MODAL HEADER
+========================================================= */
+
+.manager-layout .reject-modal-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+    min-width: 0;
+}
+
+.manager-layout .reject-modal-header > div:first-child {
+    min-width: 0;
+}
+
+.manager-layout .reject-modal-header h3 {
+    margin: 0 0 6px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.manager-layout .reject-modal-header p {
+    margin: 0;
+
+    color: #9683a1;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   REJECT REQUEST SUMMARY
+========================================================= */
+
+.manager-layout .reject-request-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.manager-layout .reject-request-summary > div {
+    min-width: 0;
+
+    padding: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    border-radius: 8px;
+}
+
+.manager-layout .reject-request-summary span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8e799c;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+.manager-layout .reject-request-summary strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   REJECT FORM
+========================================================= */
+
+.manager-layout .reject-form-group {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    min-width: 0;
+}
+
+.manager-layout .reject-form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.manager-layout .reject-form-group label span {
+    color: #ff668b;
+
+    font-weight: 700;
+}
+
+.manager-layout .reject-form-group textarea {
+    width: 100%;
+
+    min-height: 120px;
+
+    padding: 12px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 8px;
+
+    background:
+        rgba(0, 0, 0, 0.15);
+
+    color: #ffffff;
+
+    resize: vertical;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    line-height: 1.5;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.manager-layout .reject-form-group textarea::placeholder {
+    color: #776581;
+}
+
+.manager-layout .reject-form-group textarea:focus {
+    border-color:
+        rgba(255, 79, 123, 0.45);
+
+    background:
+        rgba(0, 0, 0, 0.22);
+}
+
+.manager-layout .reject-form-group textarea:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   CHARACTER COUNT
+========================================================= */
+
+.manager-layout .character-count {
+    margin-top: 5px;
+
+    color: #776581;
+
+    font-size: 8px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   REJECT MODAL ACTIONS
+========================================================= */
+
+.manager-layout .reject-modal-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding-top: 5px;
+}
+
+.manager-layout .cancel-modal-btn,
+.manager-layout .confirm-reject-btn {
+    min-height: 36px;
+
+    padding: 10px 17px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+/* Cancel */
+
+.manager-layout .cancel-modal-btn {
+    border:
+        1px solid rgba(255, 255, 255, 0.10);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    color: #bca8c9;
+}
+
+.manager-layout .cancel-modal-btn:hover {
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+}
+
+
+/* Confirm reject */
+
+.manager-layout .confirm-reject-btn {
+    border:
+        1px solid rgba(255, 79, 123, 0.40);
+
+    background: #ff4f7b;
+
+    color: #ffffff;
+}
+
+.manager-layout .confirm-reject-btn:hover {
+    background: #ff668b;
+}
+
+.manager-layout .cancel-modal-btn:disabled,
+.manager-layout .confirm-reject-btn:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+========================================================= */
+
+.manager-layout .details-modal::-webkit-scrollbar,
+.manager-layout .reject-modal::-webkit-scrollbar,
+.manager-layout .sidebar-nav::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.manager-layout .details-modal::-webkit-scrollbar-track,
+.manager-layout .reject-modal::-webkit-scrollbar-track,
+.manager-layout .sidebar-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.manager-layout .details-modal::-webkit-scrollbar-thumb,
+.manager-layout .reject-modal::-webkit-scrollbar-thumb,
+.manager-layout .sidebar-nav::-webkit-scrollbar-thumb {
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 10px;
+}
+
+.manager-layout .details-modal,
+.manager-layout .reject-modal,
+.manager-layout .sidebar-nav {
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgba(255, 255, 255, 0.12)
+        transparent;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .manager-layout .main-content {
+        padding: 28px;
+    }
+
+    .manager-layout .summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .manager-layout .profile-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1000px
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .manager-layout .sidebar {
+        width: 210px;
+        min-width: 210px;
+    }
+
+    .manager-layout .main-content {
+        padding: 25px;
+    }
+
+    .manager-layout .request-info {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .manager-layout .dashboard-secondary-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 800px
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .manager-layout {
+        flex-direction: column;
+    }
+
+
+    /* Sidebar */
+
+    .manager-layout .sidebar {
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+
+        position: relative;
+
+        padding: 15px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .manager-layout .brand {
+        margin-bottom: 15px;
+    }
+
+    .manager-layout .brand h1 {
+        font-size: 21px;
+    }
+
+    .manager-layout .sidebar-nav {
+        width: 100%;
+
+        flex-direction: row;
+
+        gap: 7px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding-bottom: 4px;
+    }
+
+    .manager-layout .nav-item {
+        width: auto;
+        min-width: max-content;
+
+        flex-shrink: 0;
+
+        white-space: nowrap;
+    }
+
+    .manager-layout .logout-btn {
+        margin-top: 15px;
+    }
+
+
+    /* Main */
+
+    .manager-layout .main-content {
+        width: 100%;
+        min-height: auto;
+
+        padding: 20px;
+    }
+
+
+    /* Welcome */
+
+    .manager-layout .welcome-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .manager-layout .welcome-card .primary-btn {
+        width: auto;
+    }
+
+
+    /* Dashboard */
+
+    .manager-layout .dashboard-secondary-grid {
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 650px
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .manager-layout .topbar {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        margin-bottom: 20px;
+    }
+
+    .manager-layout .user-info {
+        width: 100%;
+    }
+
+    .manager-layout .user-info span {
+        max-width: calc(100vw - 100px);
+    }
+
+    .manager-layout .summary-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .manager-layout .profile-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .manager-layout .section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .manager-layout .request-top {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .manager-layout .request-top > span {
+        white-space: normal;
+    }
+
+    .manager-layout .reviewed-info {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .manager-layout .reviewed-info strong {
+        text-align: left;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .manager-layout .main-content {
+        padding: 16px;
+    }
+
+    .manager-layout .topbar h2 {
+        font-size: 20px;
+    }
+
+    .manager-layout .topbar p {
+        font-size: 11px;
+    }
+
+    .manager-layout .welcome-card {
+        padding: 20px;
+    }
+
+    .manager-layout .welcome-card h3 {
+        font-size: 16px;
+    }
+
+    .manager-layout .welcome-card p {
+        font-size: 10px;
+    }
+
+    .manager-layout .section-card {
+        padding: 17px;
+    }
+
+    .manager-layout .request-info {
+        grid-template-columns:
+            1fr;
+    }
+
+    .manager-layout .request-actions {
+        flex-direction: column;
+    }
+
+    .manager-layout .request-actions button {
+        width: 100%;
+    }
+
+    .manager-layout .profile-header {
+        align-items: flex-start;
+    }
+
+    .manager-layout .profile-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .manager-layout .profile-row strong {
+        width: 100%;
+
+        text-align: left;
+    }
+
+
+    /* Details modal */
+
+    .manager-layout .details-modal-overlay {
+        align-items: flex-start;
+
+        padding: 12px;
+    }
+
+    .manager-layout .details-modal {
+        max-height: 94vh;
+
+        padding: 18px;
+
+        border-radius: 10px;
+    }
+
+    .manager-layout .details-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .manager-layout .details-employee {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+    .manager-layout .details-actions {
+        flex-direction: column;
+    }
+
+    .manager-layout .details-actions button {
+        width: 100%;
+    }
+
+
+    /* Reject modal */
+
+    .manager-layout .reject-modal-overlay {
+        align-items: flex-start;
+
+        padding: 12px;
+    }
+
+    .manager-layout .reject-modal {
+        max-height: 94vh;
+
+        padding: 18px;
+
+        border-radius: 10px;
+    }
+
+    .manager-layout .reject-request-summary {
+        grid-template-columns:
+            1fr;
+    }
+
+    .manager-layout .reject-modal-actions {
+        flex-direction: column;
+    }
+
+    .manager-layout .cancel-modal-btn,
+    .manager-layout .confirm-reject-btn {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 500px
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .manager-layout .main-content {
+        padding: 14px;
+    }
+
+    .manager-layout .sidebar {
+        padding: 12px;
+    }
+
+    .manager-layout .brand {
+        padding: 0 8px;
+    }
+
+    .manager-layout .brand h1 {
+        font-size: 20px;
+    }
+
+    .manager-layout .brand span {
+        font-size: 9px;
+    }
+
+    .manager-layout .nav-item {
+        padding: 10px 12px;
+
+        font-size: 11px;
+    }
+
+    .manager-layout .nav-icon {
+        width: 20px;
+        min-width: 20px;
+
+        font-size: 12px;
+    }
+
+    .manager-layout .welcome-card {
+        padding: 18px;
+    }
+
+    .manager-layout .summary-card {
+        padding: 17px;
+    }
+
+    .manager-layout .section-card {
+        padding: 15px;
+    }
+
+    .manager-layout .request-card {
+        padding: 14px;
+    }
+
+    .manager-layout .request-filters {
+        gap: 6px;
+    }
+
+    .manager-layout .filter-btn {
+        flex: 1 1 auto;
+
+        min-width: 80px;
+    }
+
+    .manager-layout .profile-summary-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+    .manager-layout .profile-header {
+        padding: 16px;
+    }
+
+    .manager-layout .profile-avatar {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+
+        font-size: 18px;
+    }
+
+    .manager-layout .profile-header h3 {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 400px
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .manager-layout .main-content {
+        padding: 12px;
+    }
+
+    .manager-layout .sidebar {
+        padding: 10px;
+    }
+
+    .manager-layout .brand h1 {
+        font-size: 19px;
+    }
+
+    .manager-layout .topbar h2 {
+        font-size: 18px;
+    }
+
+    .manager-layout .welcome-card {
+        padding: 16px;
+    }
+
+    .manager-layout .welcome-card h3 {
+        font-size: 14px;
+    }
+
+    .manager-layout .summary-grid {
+        gap: 10px;
+    }
+
+    .manager-layout .section-card {
+        padding: 13px;
+    }
+
+    .manager-layout .request-card {
+        padding: 12px;
+    }
+
+    .manager-layout .employee-summary {
+        align-items: flex-start;
+    }
+
+    .manager-layout .request-actions button {
+        min-height: 36px;
+    }
+
+    .manager-layout .details-modal,
+    .manager-layout .reject-modal {
+        padding: 15px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS — 350px
+========================================================= */
+
+@media (max-width: 350px) {
+
+    .manager-layout .main-content {
+        padding: 10px;
+    }
+
+    .manager-layout .sidebar {
+        padding: 8px;
+    }
+
+    .manager-layout .section-card {
+        padding: 11px;
+    }
+
+    .manager-layout .request-card {
+        padding: 10px;
+    }
+
+    .manager-layout .filter-btn {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .manager-layout .profile-summary-grid {
+        grid-template-columns:
+            1fr;
+    }
+}

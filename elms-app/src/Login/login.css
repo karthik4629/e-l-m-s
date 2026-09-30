@@ -1,0 +1,761 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* =================================
+   RESET
+================================= */
+
+.page,
+.page * {
+    box-sizing: border-box;
+}
+
+
+/* =================================
+   HTML / BODY / ROOT
+================================= */
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+
+/* =================================
+   MAIN PAGE
+================================= */
+
+.page {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #4b087e 0%,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #3d0870 0%,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #16002f 0%,
+            #260052 45%,
+            #130025 100%
+        );
+}
+
+
+/* =================================
+   BACKGROUND SHAPE - TOP LEFT
+================================= */
+
+.page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    top: -160px;
+    left: -100px;
+
+    background: #3b0870;
+
+    transform: rotate(45deg);
+
+    opacity: 0.8;
+
+    pointer-events: none;
+}
+
+
+/* =================================
+   BACKGROUND SHAPE - BOTTOM RIGHT
+================================= */
+
+.page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -130px;
+    bottom: -120px;
+
+    border: 2px solid rgba(255, 74, 125, 0.5);
+
+    transform: rotate(45deg);
+
+    border-radius: 20px;
+
+    pointer-events: none;
+}
+
+
+/* =================================
+   LOGIN CARD
+================================= */
+
+.login-card {
+    position: relative;
+
+    z-index: 10;
+
+    width: 430px;
+    max-width: 92vw;
+
+    padding: 42px 48px 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(100, 24, 180, 0.88),
+            rgba(67, 12, 137, 0.88)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(8px);
+
+    border-radius: 0;
+
+    overflow: hidden;
+}
+
+
+/* =================================
+   PINK BOTTOM LINE
+================================= */
+
+.login-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 7px;
+
+    background: #ff4f7b;
+}
+
+
+/* =================================
+   LEAVE DESK LOGO
+================================= */
+
+.logo {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.logo h1 {
+    margin: 0;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =================================
+   LOGIN HEADING
+================================= */
+
+.login-heading {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.login-heading h2 {
+    margin: 0 0 5px;
+
+    font-size: 26px;
+
+    font-weight: 600;
+
+    color: #ff668b;
+}
+
+
+.login-heading p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =================================
+   INPUT GROUP
+================================= */
+
+.page .input-group {
+    margin-bottom: 19px;
+}
+
+
+.page .input-group label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    color: #ff6f93;
+}
+
+
+.page .input-group input {
+    width: 100%;
+    height: 44px;
+
+    padding: 0 13px;
+
+    border: none;
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.90);
+
+    color: #32104f;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    border-radius: 0;
+
+    transition: 0.25s ease;
+}
+
+
+.page .input-group input::placeholder {
+    color: #999999;
+}
+
+
+.page .input-group input:focus {
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 2px rgba(255, 82, 125, 0.5);
+}
+
+
+.page .input-group input:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+}
+
+
+/* =================================
+   PASSWORD BOX
+================================= */
+
+.password-box {
+    position: relative;
+
+    width: 100%;
+}
+
+
+.password-box input {
+    padding-right: 60px !important;
+}
+
+
+.password-box button {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    padding: 4px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #6a269b;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.password-box button:hover:not(:disabled) {
+    color: #ff4f7b;
+}
+
+
+.password-box button:focus-visible {
+    outline: 2px solid #ff4f7b;
+
+    outline-offset: 2px;
+}
+
+
+.password-box button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =================================
+   REMEMBER ME + FORGOT PASSWORD
+================================= */
+
+.login-options {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 5px;
+    margin-bottom: 20px;
+
+    font-size: 11px;
+}
+
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+.remember input {
+    width: 13px;
+    height: 13px;
+
+    margin: 0;
+
+    accent-color: #ff4f7b;
+
+    cursor: pointer;
+}
+
+
+.remember input:disabled {
+    cursor: not-allowed;
+}
+
+
+/* =================================
+   FORGOT PASSWORD BUTTON
+================================= */
+
+.forgot-password-link {
+    padding: 3px 0;
+
+    border: none;
+
+    background: none;
+
+    color: #ff668b;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    white-space: nowrap;
+}
+
+
+.forgot-password-link:hover:not(:disabled) {
+    color: #ff91a9;
+
+    text-decoration: underline;
+}
+
+
+.forgot-password-link:focus-visible {
+    outline: 2px solid #ffffff;
+
+    outline-offset: 3px;
+}
+
+
+.forgot-password-link:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =================================
+   LOGIN BUTTON
+================================= */
+
+.login-btn {
+    width: 100%;
+    min-height: 43px;
+
+    padding: 10px 12px;
+
+    border: none;
+
+    background: #ff4f7b;
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    border-radius: 0;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 8px 20px rgba(255, 79, 123, 0.25);
+}
+
+
+.login-btn:hover:not(:disabled) {
+    background: #ff668b;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 79, 123, 0.35);
+}
+
+
+.login-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+
+.login-btn:focus-visible {
+    outline: 2px solid #ffffff;
+
+    outline-offset: 3px;
+}
+
+
+.login-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =================================
+   ERROR MESSAGE
+================================= */
+
+.page .error-message {
+    min-height: 18px;
+
+    margin-top: 12px;
+    margin-bottom: 0;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    color: #ff9aad;
+
+    line-height: 1.5;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =================================
+   REGISTER SECTION
+================================= */
+
+.register-section {
+    text-align: center;
+
+    margin-top: 22px;
+}
+
+
+.register-section p {
+    margin: 0 0 9px;
+
+    font-size: 11px;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+.register-btn {
+    width: 100%;
+    min-height: 43px;
+
+    padding: 10px 12px;
+
+    border: none;
+
+    background: #ff4f7b;
+
+    color: #ffffff;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    border-radius: 0;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 8px 20px rgba(255, 79, 123, 0.20);
+}
+
+
+.register-btn:hover:not(:disabled) {
+    background: #ff668b;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 25px rgba(255, 79, 123, 0.30);
+}
+
+
+.register-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+
+.register-btn:focus-visible {
+    outline: 2px solid #ffffff;
+
+    outline-offset: 3px;
+}
+
+
+.register-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 500px) {
+
+    .page {
+        align-items: flex-start;
+
+        padding: 20px 16px;
+    }
+
+
+    .login-card {
+        width: 100%;
+        max-width: 430px;
+
+        margin: auto 0;
+
+        padding: 35px 28px 40px;
+    }
+
+
+    .logo {
+        margin-bottom: 22px;
+    }
+
+
+    .logo h1 {
+        font-size: 26px;
+    }
+
+
+    .login-heading {
+        margin-bottom: 25px;
+    }
+
+
+    .login-heading h2 {
+        font-size: 23px;
+    }
+
+
+    .login-heading p {
+        font-size: 12px;
+    }
+
+
+    .login-options {
+        font-size: 10px;
+
+        gap: 10px;
+    }
+
+
+    .forgot-password-link {
+        font-size: 10px;
+    }
+
+
+    .remember {
+        font-size: 10px;
+    }
+}
+
+
+@media (max-width: 360px) {
+
+    .page {
+        padding: 15px 12px;
+    }
+
+
+    .login-card {
+        padding: 30px 20px 36px;
+    }
+
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+
+    .login-heading h2 {
+        font-size: 21px;
+    }
+
+
+    .login-heading p {
+        font-size: 11px;
+    }
+
+
+    .page .input-group label {
+        font-size: 11px;
+    }
+
+
+    .page .input-group input {
+        font-size: 11px;
+    }
+
+
+    .login-options {
+        flex-wrap: wrap;
+    }
+
+
+    .login-btn,
+    .register-btn {
+        min-height: 44px;
+    }
+}
+
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .password-box button,
+    .forgot-password-link,
+    .login-btn,
+    .register-btn,
+    .page .input-group input {
+        transition: none;
+    }
+}

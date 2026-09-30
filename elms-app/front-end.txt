@@ -1,0 +1,46 @@
+elms-app/
+│
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+│
+├── src/
+│   │
+│   ├── Admin/
+│   │   ├── admin.jsx
+│   │   └── admin.css
+│   │
+│   ├── Employee/
+│   │   ├── employee.jsx
+│   │   └── employee.css
+│   │
+│   ├── Manager/
+│   │   ├── manager.jsx
+│   │   └── manager.css
+│   │
+│   ├── Login/
+│   │   ├── login.jsx
+│   │   ├── login.css
+│   │   ├── register.jsx
+│   │   ├── register.css
+│   │   ├── forgotPassword.jsx
+│   │   ├── forgotPassword.css
+│   │   ├── resetPassword.jsx
+│   │   └── resetPassword.css
+│   │
+│   ├── components/
+│   │   ├── NotificationPanel.jsx
+│   │   └── NotificationPanel.css
+│   │
+│   ├── assets/
+│   │   └── hero.png
+│   │
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── eslint.config.js
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js

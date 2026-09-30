@@ -1,0 +1,47 @@
+mern-backend/
+│
+├── config/
+│   └── db.js
+│
+├── controllers/
+│   ├── authController.js
+│   ├── employeeController.js
+│   ├── leaveController.js
+│   ├── managerController.js
+│   ├── adminController.js
+│   ├── notificationController.js
+│   └── passwordController.js
+│
+├── middleware/
+│   ├── authMiddleware.js
+│   └── roleMiddleware.js
+│
+├── models/
+│   ├── User.js
+│   ├── Leave.js
+│   ├── Notification.js
+│   └── PasswordResetToken.js
+│
+├── routes/
+│   ├── authRoutes.js
+│   ├── employeeRoutes.js
+│   ├── leaveRoutes.js
+│   ├── managerRoutes.js
+│   ├── adminRoutes.js
+│   ├── notificationRoutes.js
+│   └── passwordRoutes.js
+│
+├── utils/
+│   └── generateToken.js
+│
+├── scripts/
+│   ├── checkEmployee.js
+│   ├── checkLeaveStatuses.js
+│   ├── migrateLeaveStatus.js
+│   └── testManagerAssignment.js
+│
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── server.js
